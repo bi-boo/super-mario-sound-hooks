@@ -24,7 +24,6 @@ allowed-tools: [Read, Bash]
 - PostToolUse.Edit → `smb_jump-small.wav`
 - PostToolUse.Write → `smb_jump-super.wav`
 - PostToolUse.Bash → `smb_kick.wav`
-- SubagentStop → `smb_pipe.wav`
 - TaskCompleted → `smb_world_clear.wav`
 
 ## 执行逻辑

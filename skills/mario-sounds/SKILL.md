@@ -19,7 +19,6 @@ It plays Mario sound effects for Claude Code hook events:
 - PostToolUse.Edit → `smb_jump-small.wav`
 - PostToolUse.Write → `smb_jump-super.wav`
 - PostToolUse.Bash → `smb_kick.wav`
-- SubagentStop → `smb_pipe.wav`
 - TaskCompleted → `smb_world_clear.wav`
 
 ## If user asks to test sounds

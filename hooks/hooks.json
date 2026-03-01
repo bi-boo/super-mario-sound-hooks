@@ -69,16 +69,6 @@
         ]
       }
     ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_pipe.wav"
-          }
-        ]
-      }
-    ],
     "TaskCompleted": [
       {
         "hooks": [

@@ -9,7 +9,6 @@
 - `Stop`
 - `Notification`（`permission_prompt` / `elicitation_dialog` / `idle_prompt`）
 - `PostToolUse`（`Edit` / `Write` / `Bash`）
-- `SubagentStop`
 - `TaskCompleted`
 
 ## 目录结构
@@ -44,12 +43,12 @@ super-mario-sound-hooks/
 
 1. 将目录放到：
 
-   `~/.claude/plugins/skills/super-mario-sound-hooks/`
+   `~/.claude/plugins/localdev/super-mario-sound-hooks/`
 
 2. 确保脚本有执行权限：
 
    ```bash
-   chmod +x ~/.claude/plugins/skills/super-mario-sound-hooks/hooks/play-sound.sh
+   chmod +x ~/.claude/plugins/localdev/super-mario-sound-hooks/hooks/play-sound.sh
    ```
 
 3. 重启 Claude Code 会话。
@@ -65,7 +64,6 @@ super-mario-sound-hooks/
 | PostToolUse | `Edit` | `smb_jump-small.wav` |
 | PostToolUse | `Write` | `smb_jump-super.wav` |
 | PostToolUse | `Bash` | `smb_kick.wav` |
-| SubagentStop | - | `smb_pipe.wav` |
 | TaskCompleted | - | `smb_world_clear.wav` |
 
 ## 自定义音效
