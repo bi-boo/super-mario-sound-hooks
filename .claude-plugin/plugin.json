@@ -1,0 +1,9 @@
+{
+  "name": "super-mario-sound-hooks",
+  "version": "1.0.0",
+  "description": "Play classic Super Mario sound effects for Claude Code hook events",
+  "author": {
+    "name": "Baozheng"
+  },
+  "repository": "https://github.com/baozheng/super-mario-sound-hooks"
+}
