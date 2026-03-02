@@ -6,7 +6,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh coin.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh coin.wav 0.6"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-task-summary.sh"
           }
         ]
       }
@@ -35,18 +39,36 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh 1up.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh 1up.wav 0.6"
           }
         ]
       }
     ],
     "PostToolUse": [
       {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_bump.wav 0.6"
+          }
+        ]
+      },
+      {
+        "matcher": "Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_stomp.wav 0.6"
+          }
+        ]
+      },
+      {
         "matcher": "Edit",
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-small.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-small.wav 0.6"
           }
         ]
       },
@@ -55,7 +77,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-super.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-super.wav 0.6"
           }
         ]
       },
@@ -64,7 +86,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_kick.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_kick.wav 0.6"
           }
         ]
       }
@@ -74,7 +96,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_world_clear.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/mark-task-completed.sh"
           }
         ]
       }

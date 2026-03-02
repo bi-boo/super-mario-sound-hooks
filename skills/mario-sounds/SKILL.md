@@ -12,14 +12,16 @@ This skill explains and manages the `super-mario-sound-hooks` plugin sound mappi
 
 It plays Mario sound effects for Claude Code hook events:
 
-- Stop → `coin.wav`
+- Stop → `coin.wav` + （若本轮有 TaskCompleted）`smb_world_clear.wav`
 - Notification.permission_prompt → `smb_warning.wav`
 - Notification.elicitation_dialog → `powerup.wav`
 - Notification.idle_prompt → `1up.wav`
+- PostToolUse.Read → `smb_bump.wav`
+- PostToolUse.Grep → `smb_stomp.wav`
 - PostToolUse.Edit → `smb_jump-small.wav`
 - PostToolUse.Write → `smb_jump-super.wav`
 - PostToolUse.Bash → `smb_kick.wav`
-- TaskCompleted → `smb_world_clear.wav`
+- TaskCompleted → 内部打标记（`smb_world_clear.wav` 延迟到下一个 Stop 时播放）
 
 ## If user asks to test sounds
 
