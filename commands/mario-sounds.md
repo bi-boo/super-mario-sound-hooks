@@ -17,10 +17,16 @@ allowed-tools: [Read, Bash]
 
 ## 音效映射
 
+- SessionStart.startup|resume|clear|compact → `smb_pipe.wav`
 - Stop → `coin.wav`
 - Notification.permission_prompt → `smb_warning.wav`
 - Notification.elicitation_dialog → `powerup.wav`
 - Notification.idle_prompt → `1up.wav`
+- PostToolUse.Read → `smb_bump.wav`
+- PostToolUse.Grep → `smb_stomp.wav`
+- PostToolUse.Glob → `glob_search.wav`
+- PostToolUse.WebSearch → `web_search.wav`
+- PostToolUse.WebFetch → `web_fetch.wav`
 - PostToolUse.Edit → `smb_jump-small.wav`
 - PostToolUse.Write → `smb_jump-super.wav`
 - PostToolUse.Bash → `smb_kick.wav`
@@ -29,13 +35,19 @@ allowed-tools: [Read, Bash]
 ## 执行逻辑
 
 1. 默认或 `list`：只展示映射表和可用音效文件。
-2. `test <file>`：调用 `hooks/play-sound.sh <file>` 播放指定音效。
-3. `all`：按映射顺序逐个调用 `hooks/play-sound.sh` 测试播放。
+2. `test <file>`：调用 `hooks/play-sound.sh <file> [volume]` 播放指定音效。
+3. `all`：调用 `hooks/demo-sounds.sh` 按映射顺序同步播放全部音效。
 
 ## 测试命令
 
-统一使用：
+单个音效：
 
 ```bash
-"${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh" "<sound-file.wav>"
+"${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh" "<sound-file.wav>" "[volume]"
+```
+
+全部音效（demo）：
+
+```bash
+"${CLAUDE_PLUGIN_ROOT}/hooks/demo-sounds.sh"
 ```

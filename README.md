@@ -7,8 +7,9 @@
 本插件覆盖以下事件：
 
 - `Stop`
+- `SessionStart`
 - `Notification`（`permission_prompt` / `elicitation_dialog` / `idle_prompt`）
-- `PostToolUse`（`Edit` / `Write` / `Bash`）
+- `PostToolUse`（`Read` / `Grep` / `Glob` / `WebSearch` / `WebFetch` / `Edit` / `Write` / `Bash`）
 - `TaskCompleted`
 
 ## 目录结构
@@ -19,12 +20,21 @@ super-mario-sound-hooks/
 │   └── plugin.json
 ├── hooks/
 │   ├── hooks.json
-│   └── play-sound.sh
+│   ├── play-sound.sh
+│   ├── demo-sounds.sh
+│   ├── mark-task-completed.sh
+│   └── play-task-summary.sh
 ├── sounds/
 │   ├── coin.wav
 │   ├── smb_warning.wav
 │   ├── powerup.wav
 │   ├── 1up.wav
+│   ├── session_start.wav
+│   ├── smb_bump.wav
+│   ├── smb_stomp.wav
+│   ├── glob_search.wav
+│   ├── web_search.wav
+│   ├── web_fetch.wav
 │   ├── smb_jump-small.wav
 │   ├── smb_jump-super.wav
 │   ├── smb_kick.wav
@@ -57,10 +67,16 @@ super-mario-sound-hooks/
 
 | 事件 | 匹配器 | 音效 |
 |---|---|---|
+| SessionStart | `startup|resume|clear|compact` | `smb_pipe.wav` |
 | Stop | - | `coin.wav` |
 | Notification | `permission_prompt` | `smb_warning.wav` |
 | Notification | `elicitation_dialog` | `powerup.wav` |
 | Notification | `idle_prompt` | `1up.wav` |
+| PostToolUse | `Read` | `smb_bump.wav` |
+| PostToolUse | `Grep` | `smb_stomp.wav` |
+| PostToolUse | `Glob` | `glob_search.wav` |
+| PostToolUse | `WebSearch` | `web_search.wav` |
+| PostToolUse | `WebFetch` | `web_fetch.wav` |
 | PostToolUse | `Edit` | `smb_jump-small.wav` |
 | PostToolUse | `Write` | `smb_jump-super.wav` |
 | PostToolUse | `Bash` | `smb_kick.wav` |
@@ -75,7 +91,7 @@ super-mario-sound-hooks/
 
 `hooks/play-sound.sh` 自动识别系统并选择播放器：
 
-- macOS: `afplay`
+- macOS: `afplay`（支持可选音量参数）
 - Linux: `aplay`（优先）或 `paplay`
 
 播放在后台执行，不阻塞 Claude Code。

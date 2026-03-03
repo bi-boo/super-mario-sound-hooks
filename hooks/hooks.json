@@ -44,6 +44,17 @@
         ]
       }
     ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_pipe.wav 0.6"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Read",
@@ -60,6 +71,33 @@
           {
             "type": "command",
             "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_stomp.wav 0.6"
+          }
+        ]
+      },
+      {
+        "matcher": "Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh glob_search.wav 0.5"
+          }
+        ]
+      },
+      {
+        "matcher": "WebSearch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh web_search.wav 0.5"
+          }
+        ]
+      },
+      {
+        "matcher": "WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh web_fetch.wav 0.5"
           }
         ]
       },
