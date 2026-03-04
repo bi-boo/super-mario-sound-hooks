@@ -4,90 +4,7 @@
 >
 > 让 Claude Code 的每一个操作都响起马里奥的经典音效！
 
-[English](#-english) · [中文](#-中文)
-
----
-
-## 🇺🇸 English
-
-### What is this?
-
-**Super Mario Sound Hooks** is a Claude Code plugin that maps classic Super Mario sound effects to Claude's hook events. Every file read, every bash command, every completed task — each one triggers a nostalgic 8-bit sound that makes coding feel like an adventure.
-
-Stop staring silently at your terminal. Start-a the adventure. 🌟
-
-### Sound Map
-
-| Event | Trigger | Sound | Vibe |
-|---|---|---|---|
-| `SessionStart` | startup / resume / clear / compact | `smb_pipe.wav` | Entering the warp pipe |
-| `Stop` | Claude finishes responding | `coin.wav` | Collected a coin! |
-| `Notification` | `permission_prompt` | `smb_warning.wav` | Danger ahead! |
-| `Notification` | `elicitation_dialog` | `powerup.wav` | Grabbed a mushroom |
-| `Notification` | `idle_prompt` | `1up.wav` | Extra life! |
-| `PostToolUse` | `Read` | `smb_bump.wav` | Bonked a block |
-| `PostToolUse` | `Grep` | `smb_stomp.wav` | Stomped a Goomba |
-| `PostToolUse` | `Glob` | `glob_search.wav` | Scanning the map |
-| `PostToolUse` | `WebSearch` | `web_search.wav` | Exploring new worlds |
-| `PostToolUse` | `WebFetch` | `web_fetch.wav` | Retrieved the goods |
-| `PostToolUse` | `Edit` | `smb_jump-small.wav` | Small jump |
-| `PostToolUse` | `Write` | `smb_jump-super.wav` | Super jump! |
-| `PostToolUse` | `Bash` | `smb_kick.wav` | Shell kicked |
-| `TaskCompleted` | Task marked done | `smb_world_clear.wav` | World clear! 🎉 |
-
-### Installation
-
-**Step 1** — Clone or download this repo into your local plugins directory:
-
-```bash
-git clone https://github.com/bi-boo/super-mario-sound-hooks \
-  ~/.claude/plugins/localdev/super-mario-sound-hooks
-```
-
-**Step 2** — Grant execute permission to the hooks:
-
-```bash
-chmod +x ~/.claude/plugins/localdev/super-mario-sound-hooks/hooks/*.sh
-```
-
-**Step 3** — Restart your Claude Code session and listen for the warp pipe sound. 🎵
-
-### Commands
-
-Once installed, the `/mario-sounds` slash command is available inside Claude Code:
-
-| Command | Description |
-|---|---|
-| `/mario-sounds` or `/mario-sounds list` | Show all sound mappings |
-| `/mario-sounds test coin.wav` | Play a specific sound |
-| `/mario-sounds all` | Play the full demo in sequence |
-
-### Customization
-
-**Swap a sound file** — Replace any `.wav` file in the `sounds/` directory with your own. Keep the same filename and it just works.
-
-**Change the mapping** — Edit `hooks/hooks.json` to point any event to a different sound file or adjust the volume (0.0–1.0).
-
-**Add new events** — Claude Code supports many hook types. Check the [Claude Code hooks documentation](https://docs.anthropic.com/en/docs/claude-code/hooks) and add your own entries.
-
-### Platform Support
-
-The `play-sound.sh` script auto-detects your OS and picks the right player:
-
-| Platform | Player |
-|---|---|
-| macOS | `afplay` (with optional volume control) |
-| Linux | `aplay` (preferred) or `paplay` |
-
-All sounds play in the background — Claude Code is never blocked.
-
-### Sound Attribution
-
-The sound files in `sounds/` are sourced from the Super Mario series. Please verify the applicable license before redistribution or commercial use.
-
-### License
-
-MIT — see [LICENSE](LICENSE).
+[中文](#-中文) · [English](#-english)
 
 ---
 
@@ -171,3 +88,86 @@ chmod +x ~/.claude/plugins/localdev/super-mario-sound-hooks/hooks/*.sh
 ### 开源协议
 
 MIT — 详见 [LICENSE](LICENSE)。
+
+---
+
+## 🇺🇸 English
+
+### What is this?
+
+**Super Mario Sound Hooks** is a Claude Code plugin that maps classic Super Mario sound effects to Claude's hook events. Every file read, every bash command, every completed task — each one triggers a nostalgic 8-bit sound that makes coding feel like an adventure.
+
+Stop staring silently at your terminal. Start-a the adventure. 🌟
+
+### Sound Map
+
+| Event | Trigger | Sound | Vibe |
+|---|---|---|---|
+| `SessionStart` | startup / resume / clear / compact | `smb_pipe.wav` | Entering the warp pipe |
+| `Stop` | Claude finishes responding | `coin.wav` | Collected a coin! |
+| `Notification` | `permission_prompt` | `smb_warning.wav` | Danger ahead! |
+| `Notification` | `elicitation_dialog` | `powerup.wav` | Grabbed a mushroom |
+| `Notification` | `idle_prompt` | `1up.wav` | Extra life! |
+| `PostToolUse` | `Read` | `smb_bump.wav` | Bonked a block |
+| `PostToolUse` | `Grep` | `smb_stomp.wav` | Stomped a Goomba |
+| `PostToolUse` | `Glob` | `glob_search.wav` | Scanning the map |
+| `PostToolUse` | `WebSearch` | `web_search.wav` | Exploring new worlds |
+| `PostToolUse` | `WebFetch` | `web_fetch.wav` | Retrieved the goods |
+| `PostToolUse` | `Edit` | `smb_jump-small.wav` | Small jump |
+| `PostToolUse` | `Write` | `smb_jump-super.wav` | Super jump! |
+| `PostToolUse` | `Bash` | `smb_kick.wav` | Shell kicked |
+| `TaskCompleted` | Task marked done | `smb_world_clear.wav` | World clear! 🎉 |
+
+### Installation
+
+**Step 1** — Clone or download this repo into your local plugins directory:
+
+```bash
+git clone https://github.com/bi-boo/super-mario-sound-hooks \
+  ~/.claude/plugins/localdev/super-mario-sound-hooks
+```
+
+**Step 2** — Grant execute permission to the hooks:
+
+```bash
+chmod +x ~/.claude/plugins/localdev/super-mario-sound-hooks/hooks/*.sh
+```
+
+**Step 3** — Restart your Claude Code session and listen for the warp pipe sound. 🎵
+
+### Commands
+
+Once installed, the `/mario-sounds` slash command is available inside Claude Code:
+
+| Command | Description |
+|---|---|
+| `/mario-sounds` or `/mario-sounds list` | Show all sound mappings |
+| `/mario-sounds test coin.wav` | Play a specific sound |
+| `/mario-sounds all` | Play the full demo in sequence |
+
+### Customization
+
+**Swap a sound file** — Replace any `.wav` file in the `sounds/` directory with your own. Keep the same filename and it just works.
+
+**Change the mapping** — Edit `hooks/hooks.json` to point any event to a different sound file or adjust the volume (0.0–1.0).
+
+**Add new events** — Claude Code supports many hook types. Check the [Claude Code hooks documentation](https://docs.anthropic.com/en/docs/claude-code/hooks) and add your own entries.
+
+### Platform Support
+
+The `play-sound.sh` script auto-detects your OS and picks the right player:
+
+| Platform | Player |
+|---|---|
+| macOS | `afplay` (with optional volume control) |
+| Linux | `aplay` (preferred) or `paplay` |
+
+All sounds play in the background — Claude Code is never blocked.
+
+### Sound Attribution
+
+The sound files in `sounds/` are sourced from the Super Mario series. Please verify the applicable license before redistribution or commercial use.
+
+### License
+
+MIT — see [LICENSE](LICENSE).
