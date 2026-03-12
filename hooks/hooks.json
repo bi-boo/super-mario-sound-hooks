@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh coin.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh coin.wav 0.4"
           },
           {
             "type": "command",
@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_warning.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_warning.wav 0.8"
           }
         ]
       },
@@ -30,7 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh powerup.wav"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh powerup.wav 0.8"
           }
         ]
       },
@@ -39,7 +39,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh 1up.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh 1up.wav 0.4"
           }
         ]
       }
@@ -50,7 +50,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_pipe.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_pipe.wav 0.4"
           }
         ]
       }
@@ -61,7 +61,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_bump.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_bump.wav 0.4"
           }
         ]
       },
@@ -70,7 +70,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_stomp.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_stomp.wav 0.4"
           }
         ]
       },
@@ -79,7 +79,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh glob_search.wav 0.5"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh glob_search.wav 0.4"
           }
         ]
       },
@@ -88,7 +88,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh web_search.wav 0.5"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh web_search.wav 0.4"
           }
         ]
       },
@@ -97,7 +97,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh web_fetch.wav 0.5"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh web_fetch.wav 0.4"
           }
         ]
       },
@@ -106,7 +106,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-small.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-small.wav 0.4"
           }
         ]
       },
@@ -115,7 +115,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-super.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_jump-super.wav 0.4"
           }
         ]
       },
@@ -124,7 +124,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_kick.wav 0.6"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh smb_kick.wav 0.4"
           }
         ]
       }
