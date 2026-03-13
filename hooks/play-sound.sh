@@ -16,9 +16,25 @@ if [ ! -f "${SOUND_PATH}" ]; then
   exit 0
 fi
 
+# PID file for single-instance control — kill previous sound before playing new one
+PID_FILE="/tmp/super-mario-sound-hooks.${USER:-nobody}.pid"
+
+kill_previous() {
+  if [ -f "${PID_FILE}" ]; then
+    local old_pid
+    old_pid="$(cat "${PID_FILE}" 2>/dev/null)"
+    if [ -n "${old_pid}" ] && kill -0 "${old_pid}" 2>/dev/null; then
+      kill "${old_pid}" 2>/dev/null
+    fi
+    rm -f "${PID_FILE}"
+  fi
+}
+
 play_with_cmd() {
   local cmd="$1"
   shift
+
+  kill_previous
 
   case "${cmd}" in
     afplay)
@@ -32,6 +48,8 @@ play_with_cmd() {
       "${cmd}" "$@" "${SOUND_PATH}" >/dev/null 2>&1 &
       ;;
   esac
+
+  echo $! > "${PID_FILE}"
 }
 
 case "$(uname -s)" in
